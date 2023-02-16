@@ -13,7 +13,8 @@ sns.set(style="whitegrid")
 sns.set_context("poster", font_scale = .5, rc={"grid.linewidth": 0.6})
 sns.set_style({'font.family': 'Roboto'})
 
-# jupyter nbconvert --execute --template basic eda.ipynb --to html
+# jupyter-book clean ./ --all
+# jupyter-book build ./
 
 
 # ## Member Hold Times EDA
