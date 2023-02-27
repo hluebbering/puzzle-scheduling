@@ -1,0 +1,1483 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Notebook 1. Data Analysis &#8212; Puzzle Schedules | 2023</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Member Hold Times EDA" href="eda.html" />
+    <link rel="prev" title="Introduction" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/puzzle2.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Puzzle Schedules | 2023</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Notebook 1. Data Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="eda.html">
+   Member Hold Times EDA
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Notebook1-DataAnalysis.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Notebook1-DataAnalysis.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preliminary-data-analysis">
+   1. Preliminary Data Analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-libraries-and-dataset">
+     1.1 Importing Libraries and Dataset
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     1.2 Preliminary Data Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-cleaning">
+   2. Data Cleaning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#separating-columns">
+     2.1 Separating columns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fixing-data-inconsistencies">
+     2.2 Fixing Data inconsistencies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dealing-with-missing-value">
+     2.3 Dealing with Missing value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dealing-with-outliers">
+     2.4 Dealing with Outliers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#merging-data">
+   3. Merging Data
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Notebook 1. Data Analysis</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preliminary-data-analysis">
+   1. Preliminary Data Analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-libraries-and-dataset">
+     1.1 Importing Libraries and Dataset
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     1.2 Preliminary Data Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-cleaning">
+   2. Data Cleaning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#separating-columns">
+     2.1 Separating columns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fixing-data-inconsistencies">
+     2.2 Fixing Data inconsistencies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dealing-with-missing-value">
+     2.3 Dealing with Missing value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dealing-with-outliers">
+     2.4 Dealing with Outliers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#merging-data">
+   3. Merging Data
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="notebook-1-data-analysis">
+<h1>Notebook 1. Data Analysis<a class="headerlink" href="#notebook-1-data-analysis" title="Permalink to this headline">#</a></h1>
+<p><strong>1. Preliminary Data Analysis</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1.1 Importing libraries and dataset 
+1.2 Preliminary Data Analysis
+</pre></div>
+</div>
+<p><strong>2. Data Cleaning</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2.1 Separating columns
+2.2 Fixing Data inconsistencies
+2.3 Dealing with Missing values
+2.4 Dealing with Outliers
+</pre></div>
+</div>
+<p><strong>3. Merging Data</strong></p>
+<section id="preliminary-data-analysis">
+<h2>1. Preliminary Data Analysis<a class="headerlink" href="#preliminary-data-analysis" title="Permalink to this headline">#</a></h2>
+<section id="importing-libraries-and-dataset">
+<h3>1.1 Importing Libraries and Dataset<a class="headerlink" href="#importing-libraries-and-dataset" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Data 1: member_hold_times_and_packs.tsv</strong></p>
+<ul class="simple">
+<li><p>memberID - Unique identifiers for each person</p></li>
+<li><p>holdtime - number of days the person had the pack</p></li>
+<li><p>puzzlepack - name of the pack (may have more than 1 puzzle per pack)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># loading first data about member hold times </span>
+<span class="c1"># dataset has 1.9 mb size on disk</span>
+
+<span class="n">member_holdtime_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/member_hold_times_and_packs_Feb16_2023.tsv&#39;</span><span class="p">,</span> 
+                                 <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;memberID&quot;</span><span class="p">,</span> <span class="s1">&#39;holdtime&#39;</span><span class="p">,</span> <span class="s1">&#39;puzzlepack&#39;</span><span class="p">])</span>
+<span class="n">member_holdtime_df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(19733, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">member_holdtime_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>memberID</th>
+      <th>holdtime</th>
+      <th>puzzlepack</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>member1</td>
+      <td>2.939411</td>
+      <td>Artifact Puzzles Justin Hillgrove Word Travels...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>member1</td>
+      <td>0.998885</td>
+      <td>DaVici Puzzles Full Moon Feast DaVici Puzzles ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>member1</td>
+      <td>10.865032</td>
+      <td>DaVici Puzzles Flying Frigate DaVici Puzzles H...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>member1</td>
+      <td>22.083971</td>
+      <td>Liberty Puzzles Haeckel Hummingbirds Nautilus ...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>member1</td>
+      <td>5.077603</td>
+      <td>DaVici Puzzles Diana Zimens City Of Cats</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>Data 2: packs.tsv</strong></p>
+<ul class="simple">
+<li><p>memberID - Unique identifiers for each person</p></li>
+<li><p>holdtime - number of days the person had the pack</p></li>
+<li><p>puzzlepack - name of the pack (may have more than 1 puzzle per pack)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># loading second data about puzzle packs</span>
+<span class="c1"># dataset has 98kb size on disk</span>
+<span class="n">col_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pack_name&#39;</span><span class="p">,</span> <span class="s1">&#39;brand&#39;</span><span class="p">,</span> <span class="s1">&#39;piece_count&#39;</span><span class="p">,</span> <span class="s1">&#39;difficulty_rating&#39;</span><span class="p">]</span>
+<span class="n">packs_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/packs_Feb16_2023.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="n">col_names</span><span class="p">)</span>
+
+<span class="n">packs_df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(920, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">packs_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pack_name</th>
+      <th>brand</th>
+      <th>piece_count</th>
+      <th>difficulty_rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Anne Belle Thompson The Mikado Anne Belle Thom...</td>
+      <td>Other-Hand-cut</td>
+      <td>387,242</td>
+      <td>A-Easy,A-Easy</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Anthology Puzzles Alphonse Mucha La Plume Anth...</td>
+      <td>NaN</td>
+      <td>320,160</td>
+      <td>Average,Average</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Anthology Puzzles Colorful Cat Anthology Puzzl...</td>
+      <td>NaN</td>
+      <td>150,170</td>
+      <td>Really-Hard,A-Easy</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Anthology Puzzles Framed American Gothic Antho...</td>
+      <td>NaN</td>
+      <td>320,300</td>
+      <td>Average,Average</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Anthology Puzzles Over The Moon Anthology Puzz...</td>
+      <td>NaN</td>
+      <td>278,177</td>
+      <td>Average,A-Easy</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="id1">
+<h3>1.2 Preliminary Data Analysis<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>This is done to understand the data better so we can clean it accordingly. Here are some questions we are exploring -</p>
+<ol class="simple">
+<li><p>Does packname have a pattern?</p></li>
+<li><p>What is the distribution for holdtimes?</p></li>
+<li><p>Is there an evident relationship between difficulty rating and piece counts?</p></li>
+</ol>
+<blockquote>
+<div><ol class="simple">
+<li><p>Does packname have a pattern?</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Does packname have a pattern?</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_colwidth</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">member_holdtime_df</span><span class="p">[</span><span class="s1">&#39;puzzlepack&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    Artifact Puzzles Justin Hillgrove Word Travels South Artifact Puzzles Justin Hillgrove Word Travels West
+1                                  DaVici Puzzles Full Moon Feast DaVici Puzzles World&amp;#39;s Greatest Miracle
+2                                                    DaVici Puzzles Flying Frigate DaVici Puzzles Hobby Horse
+3                                          Liberty Puzzles Haeckel Hummingbirds Nautilus Puzzles Mother Adams
+4                                                                   DaVici Puzzles Diana Zimens City Of Cats 
+Name: puzzlepack, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Comments</strong>:</p>
+<ul class="simple">
+<li><p>Observe the extra space at the end of “cats “. This shows it has this pack has only one puzzle.</p></li>
+<li><p>other strings have the word “Puzzles” twice while ‘Diana Zimens City Of Cats ‘ has it only once.</p></li>
+<li><p>Looks like the first word is a brand or something, then the word “puzzle” and the name of puzzle. For example -</p>
+<ul>
+<li><p>DaVici, <strong>Puzzles</strong> Full Moon Feast DaVici <strong>Puzzles</strong> World’s Greatest Miracle</p></li>
+<li><p>DaVici, <strong>Puzzles</strong> Flying Frigate DaVici <strong>Puzzles</strong> Hobby Horse</p></li>
+<li><p>Liberty, <strong>Puzzles</strong> Haeckel Hummingbirds Nautilus <strong>Puzzles</strong> Mother Adams</p></li>
+<li><p>DaVici, <strong>Puzzles</strong> Diana Zimens City Of Cats</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><ol class="simple">
+<li><p>What is the distribution for holdtimes?</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## What is the distribution for holdtimes?</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">member_holdtime_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">member_holdtime_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">member_holdtime_df</span><span class="p">[</span><span class="s1">&#39;holdtime&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">150</span><span class="p">][</span><span class="s1">&#39;holdtime&#39;</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#ffa07a&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Holdtime up to 5 months&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">member_holdtime_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">member_holdtime_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">member_holdtime_df</span><span class="p">[</span><span class="s1">&#39;holdtime&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">151</span><span class="p">][</span><span class="s1">&#39;holdtime&#39;</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FB607F&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Holdtime over 5 months&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="c1">#plt.savefig(&quot;_static/images/hold_times_dist2.png&quot;, format=&quot;png&quot;, dpi=1200)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Notebook1-DataAnalysis_15_0.png" src="_images/Notebook1-DataAnalysis_15_0.png" />
+</div>
+</div>
+<p><strong>Comments:</strong>
+Need to remove outliers in this case</p>
+<blockquote>
+<div><ol class="simple">
+<li><p>Is there an evident relationship between difficulty rating and piece counts?</p></li>
+</ol>
+</div></blockquote>
+<ul class="simple">
+<li><p>Separate columns into <code class="docutils literal notranslate"><span class="pre">piece_count_1</span></code>, <code class="docutils literal notranslate"><span class="pre">piece_count_2</span></code>, <code class="docutils literal notranslate"><span class="pre">difficulty_rating_1</span></code>, <code class="docutils literal notranslate"><span class="pre">difficulty_rating_2</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Is there an evident relationship between difficulty rating and piece counts?</span>
+<span class="c1"># making two coulmns for piece count</span>
+<span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;piece_count_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;piece_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;piece_count_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;piece_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1"># making two columns for difficulty</span>
+<span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;difficulty_rating_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;difficulty_rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;difficulty_rating_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;difficulty_rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># creating temporary dataframe with no missing values for analysis</span>
+<span class="n">packs_df_temp_1</span> <span class="o">=</span> <span class="n">packs_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;piece_count_1&#39;</span><span class="p">,</span> <span class="s1">&#39;difficulty_rating_1&#39;</span><span class="p">])</span>
+<span class="n">packs_df_temp_2</span> <span class="o">=</span> <span class="n">packs_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;piece_count_2&#39;</span><span class="p">,</span> <span class="s1">&#39;difficulty_rating_2&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">packs_df_temp_1</span><span class="o">.</span><span class="n">piece_count_1</span> <span class="o">=</span> <span class="n">packs_df_temp_1</span><span class="o">.</span><span class="n">piece_count_1</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+<span class="n">packs_df_temp_2</span><span class="o">.</span><span class="n">piece_count_2</span> <span class="o">=</span> <span class="n">packs_df_temp_2</span><span class="o">.</span><span class="n">piece_count_2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">packs_df</span><span class="o">.</span><span class="n">difficulty_rating</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;A-Easy,A-Easy&#39;, &#39;Average,Average&#39;, &#39;Really-Hard,A-Easy&#39;,
+       &#39;Average,A-Easy&#39;, &#39;Hard,A-Easy&#39;, &#39;Hard,Average&#39;,
+       &#39;Really-Hard,Average&#39;, &#39;Average,Really-Hard&#39;, &#39;Average,Hard&#39;,
+       &#39;A-Easy,Average&#39;, &#39;Hard,Hard&#39;, nan, &#39;A-Easy,Hard&#39;,
+       &#39;Really-Hard,Really-Hard&#39;, &#39;A-Easy,Really-Hard&#39;,
+       &#39;Hard,Really-Hard&#39;, &#39;Really-Hard,Hard&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># checking category-wise distribution of piece_count</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">color_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A-Easy&#39;</span><span class="p">:</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s1">&#39;Average&#39;</span><span class="p">:</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s1">&#39;Hard&#39;</span><span class="p">:</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s1">&#39;Really-Hard&#39;</span><span class="p">:</span> <span class="s2">&quot;m&quot;</span><span class="p">}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;piece_count_1&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span> <span class="s1">&#39;difficulty_rating_1&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">packs_df_temp_1</span><span class="p">,</span> 
+            <span class="n">palette</span> <span class="o">=</span> <span class="n">color_dict</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A-Easy&#39;</span><span class="p">,</span> <span class="s1">&#39;Average&#39;</span><span class="p">,</span> <span class="s1">&#39;Hard&#39;</span><span class="p">,</span> <span class="s1">&#39;Really-Hard&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Puzzle one distribution&quot;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;piece_count_2&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span> <span class="s1">&#39;difficulty_rating_2&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">packs_df_temp_2</span><span class="p">,</span> 
+            <span class="n">palette</span> <span class="o">=</span> <span class="n">color_dict</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A-Easy&#39;</span><span class="p">,</span> <span class="s1">&#39;Average&#39;</span><span class="p">,</span> <span class="s1">&#39;Hard&#39;</span><span class="p">,</span> <span class="s1">&#39;Really-Hard&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Puzzle two distribution&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+</pre></div>
+</div>
+<img alt="_images/Notebook1-DataAnalysis_22_1.png" src="_images/Notebook1-DataAnalysis_22_1.png" />
+</div>
+</div>
+<p><strong>Comments:</strong></p>
+<ul class="simple">
+<li><p>“Easy” has the lowest median in both cases and “Hard” has the highest median.</p></li>
+<li><p>Need to check this again after data cleaning (outlier removal) at a pack level.</p></li>
+</ul>
+</section>
+</section>
+<section id="data-cleaning">
+<h2>2. Data Cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this headline">#</a></h2>
+<section id="separating-columns">
+<h3>2.1 Separating columns<a class="headerlink" href="#separating-columns" title="Permalink to this headline">#</a></h3>
+<p>Separate columns into</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pack_name</span></code>, <code class="docutils literal notranslate"><span class="pre">brand_0</span></code>, <code class="docutils literal notranslate"><span class="pre">brand_1</span></code>, <code class="docutils literal notranslate"><span class="pre">piece_count_0</span></code>, <code class="docutils literal notranslate"><span class="pre">piece_count_1</span></code>, <code class="docutils literal notranslate"><span class="pre">difficulty_0</span></code>, <code class="docutils literal notranslate"><span class="pre">difficulty_1</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># splitting brand name</span>
+<span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;brand_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;brand&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;brand_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;brand&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># piececount and difficulty were split previously</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># adding number of puzzles feature</span>
+<span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;num_puzzles&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;pack_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="k">else</span> <span class="mi">2</span><span class="p">,</span> <span class="n">na_action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fixing datatype - convert piece_count values to integers</span>
+<span class="n">packs_df</span> <span class="o">=</span> <span class="n">packs_df</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s1">&#39;piece_count_1&#39;</span><span class="p">:</span> <span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="s1">&#39;piece_count_2&#39;</span><span class="p">:</span> <span class="s1">&#39;int64&#39;</span><span class="p">},</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># checking if we have any duplicate pack names</span>
+<span class="n">packs_df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="s1">&#39;pack_name&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">packs_df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((920, 11), (920, 11))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Packs with missing difficulty_rating and piece_count are present in members table?</span>
+<span class="c1"># na_pack_name = packs_df[packs_df[[&#39;brand&#39;,&#39;piece_count&#39;, &#39;difficulty_rating&#39;]].isnull().any(axis=1)]</span>
+<span class="c1"># len(set(na_pack_name[&#39;pack_name&#39;]).intersection(member_holdtime_df[&#39;puzzlepack&#39;]))</span>
+
+<span class="c1"># -- this code is wrong, need to find a new function instead of .any</span>
+
+<span class="c1"># Number of null values</span>
+<span class="n">packs_df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pack_name                0
+brand                   25
+piece_count              8
+difficulty_rating        4
+piece_count_1            8
+piece_count_2          181
+difficulty_rating_1      4
+difficulty_rating_2      4
+brand_2                775
+brand_1                 25
+num_puzzles              0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dropping the initial variables</span>
+<span class="n">packs_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;brand&#39;</span><span class="p">,</span> <span class="s1">&#39;piece_count&#39;</span><span class="p">,</span> <span class="s1">&#39;difficulty_rating&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fixing-data-inconsistencies">
+<h3>2.2 Fixing Data inconsistencies<a class="headerlink" href="#fixing-data-inconsistencies" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Some rows straight up have nothing, drop these as there is nothing to be done</span>
+<span class="n">packs_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;difficulty_rating_1&#39;</span><span class="p">,</span> <span class="s1">&#39;difficulty_rating_2&#39;</span><span class="p">,</span> <span class="s1">&#39;piece_count_1&#39;</span><span class="p">,</span> <span class="s1">&#39;piece_count_2&#39;</span><span class="p">,</span> 
+                          <span class="s1">&#39;brand_1&#39;</span><span class="p">,</span> <span class="s1">&#39;brand_2&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Puzzles with num = 1 but 2 piece_count values</span>
+<span class="n">packs_df</span><span class="p">[(</span><span class="n">packs_df</span><span class="o">.</span><span class="n">num_puzzles</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">packs_df</span><span class="o">.</span><span class="n">brand_2</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span> <span class="o">|</span> <span class="n">packs_df</span><span class="o">.</span><span class="n">piece_count_2</span><span class="o">.</span><span class="n">notna</span><span class="p">())]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pack_name</th>
+      <th>piece_count_1</th>
+      <th>piece_count_2</th>
+      <th>difficulty_rating_1</th>
+      <th>difficulty_rating_2</th>
+      <th>brand_2</th>
+      <th>brand_1</th>
+      <th>num_puzzles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>37</th>
+      <td>Artifact Puzzles Nadieh Bremer Coronium Artifact Puzzles Nadieh Bremer Nebulium</td>
+      <td>172</td>
+      <td>147</td>
+      <td>A-Easy</td>
+      <td>A-Easy</td>
+      <td>None</td>
+      <td>Artifact</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Artifact Puzzles Roch Urbaniak Floating Town Artifact Puzzles Kozyndan Forest Dream</td>
+      <td>228</td>
+      <td>216</td>
+      <td>A-Easy</td>
+      <td>A-Easy</td>
+      <td>None</td>
+      <td>Artifact</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>Boardwalk Puzzles Alexey Erofalov San Juan Puerto Rico Boardwalk Puzzles Alexey Erofalov Germany</td>
+      <td>320</td>
+      <td>317</td>
+      <td>Average</td>
+      <td>Average</td>
+      <td>None</td>
+      <td>Other-Laser-cut</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>DaVici Puzzles Awakening DaVici Puzzles</td>
+      <td>450</td>
+      <td>280</td>
+      <td>A-Easy</td>
+      <td>A-Easy</td>
+      <td>None</td>
+      <td>DaVici</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>Davici Puzzles Photo Album Ecru Puzzles Sunny November</td>
+      <td>600</td>
+      <td>369</td>
+      <td>Average</td>
+      <td>Average</td>
+      <td>Ecru</td>
+      <td>DaVici</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Some 1 puzzle packs have a second number for pieces, this seems to be legit, updating to be 2 puzzle packs</span>
+<span class="n">packs_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[((</span><span class="n">packs_df</span><span class="o">.</span><span class="n">num_puzzles</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">packs_df</span><span class="o">.</span><span class="n">piece_count_2</span><span class="o">.</span><span class="n">notna</span><span class="p">())),</span> <span class="s1">&#39;num_puzzles&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Some 2 puzzle packs do not have piece count info for second puzzle. </span>
+<span class="n">packs_df</span><span class="p">[(</span><span class="n">packs_df</span><span class="o">.</span><span class="n">piece_count_2</span><span class="o">.</span><span class="n">isna</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">packs_df</span><span class="o">.</span><span class="n">num_puzzles</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pack_name</th>
+      <th>piece_count_1</th>
+      <th>piece_count_2</th>
+      <th>difficulty_rating_1</th>
+      <th>difficulty_rating_2</th>
+      <th>brand_2</th>
+      <th>brand_1</th>
+      <th>num_puzzles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>9</th>
+      <td>Artifact Puzzles Bee Eater Artifact Puzzles Kevin Sloan Welcome to the Wilderness</td>
+      <td>439</td>
+      <td>None</td>
+      <td>Hard</td>
+      <td>A-Easy</td>
+      <td>None</td>
+      <td>Artifact</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>BellArt Puzzles Double-sided Angel Maze Fish East Texas Piney Woods Puzzles Homer Rushing Spirit Bird</td>
+      <td>295</td>
+      <td>None</td>
+      <td>Average</td>
+      <td>Average</td>
+      <td>None</td>
+      <td>Other-Hand-cut</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>Bewilderness Puzzles Caleb Fleisher Unseen. Unheard. Bewilderness Puzzles DeptiAgrawalMittal Celebrations Art</td>
+      <td>173</td>
+      <td>None</td>
+      <td>Really-Hard</td>
+      <td>Really-Hard</td>
+      <td>None</td>
+      <td>Other-Laser-cut</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>Ecru Puzzles Aaron Wolf Spells And Sorcery Stave Puzzles Betsy Brown Starry Starry Knight</td>
+      <td>75</td>
+      <td>None</td>
+      <td>Average</td>
+      <td>Really-Hard</td>
+      <td>Stave</td>
+      <td>Ecru</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>255</th>
+      <td>Liberty Puzzles Paris Air France Ecru Puzzles Robert Delaunay Eiffel Tower</td>
+      <td>483</td>
+      <td>None</td>
+      <td>Average</td>
+      <td>A-Easy</td>
+      <td>Liberty</td>
+      <td>Ecru</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<blockquote>
+<div><p>For the packs you don’t have any piece count data for, assume they are 2 puzzle packs, each with piece count equal to the global average piece count, OR if you can tell what brand it is, use the average for that brand (major brands are: Liberty, Artifact, Ecru, Wentworth, Nautilus, Stave)</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">packs_df</span><span class="o">.</span><span class="n">piece_count_1</span> <span class="o">=</span> <span class="n">packs_df</span><span class="o">.</span><span class="n">piece_count_1</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;Int64&#39;</span><span class="p">)</span>
+<span class="n">packs_df</span><span class="o">.</span><span class="n">piece_count_2</span> <span class="o">=</span> <span class="n">packs_df</span><span class="o">.</span><span class="n">piece_count_2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;Int64&#39;</span><span class="p">)</span>
+<span class="c1"># what is the global average piececount?</span>
+<span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;piece_count_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;piece_count_2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(400.0668859649123, 314.64005412719894)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avg_pc2</span> <span class="o">=</span> <span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;piece_count_2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># making the piececount_2 same as piececount_1 IF num_puzzles ==2</span>
+<span class="n">packs_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[((</span><span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;piece_count_2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span> <span class="p">)</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;num_puzzles&#39;</span><span class="p">]</span> <span class="o">==</span><span class="mi">2</span><span class="p">)),</span> <span class="s1">&#39;piece_count_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">avg_pc2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># making the brand_2 same as brand_1</span>
+<span class="n">packs_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;brand_2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()),</span> <span class="s1">&#39;brand_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;brand_1&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># packs with 1 puzzle but 2 brands? </span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dealing-with-missing-value">
+<h3>2.3 Dealing with Missing value<a class="headerlink" href="#dealing-with-missing-value" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">member_holdtime_df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>memberID      0
+holdtime      0
+puzzlepack    0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">member_holdtime_df</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>memberID        717
+holdtime      19527
+puzzlepack      972
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Comments:</strong></p>
+<ul class="simple">
+<li><p>No missing values in the data</p></li>
+<li><p>We have information about 675 members and 910 unique puzzle packs</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">packs_df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pack_name                0
+piece_count_1            4
+piece_count_2          166
+difficulty_rating_1      0
+difficulty_rating_2      0
+brand_2                 21
+brand_1                 21
+num_puzzles              0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">packs_df</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pack_name              916
+piece_count_1          414
+piece_count_2          317
+difficulty_rating_1      4
+difficulty_rating_2      4
+brand_2                  9
+brand_1                  9
+num_puzzles              2
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Comments:Imputing missing values strategy</strong></p>
+<ul class="simple">
+<li><p>Rows with missing difficulty_rating and piece_count are removed (none of these were seen in members data)</p></li>
+<li><p>Brand:</p>
+<ul>
+<li><p>if brand_2 and brand_1 has value - put same value (done in 2.2)</p></li>
+<li><p>for rest of them - replace missing with unknown</p></li>
+</ul>
+</li>
+<li><p>piece_count:</p>
+<ul>
+<li><p>Calculate average_piece_count at diffuclty level</p></li>
+<li><p>for one puzzle: replace nan with average_piece_count</p></li>
+<li><p>for two puzzles: replace nan with average_piece_count twice</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">packs_df</span><span class="p">[[</span><span class="s1">&#39;brand_1&#39;</span><span class="p">,</span> <span class="s1">&#39;brand_2&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">packs_df</span><span class="p">[[</span><span class="s1">&#39;brand_1&#39;</span><span class="p">,</span> <span class="s1">&#39;brand_2&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;unknown&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># puzzles which have no value for both piece_1 and piece_2 are dropped</span>
+<span class="n">packs_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;piece_count_1&#39;</span><span class="p">,</span> <span class="s1">&#39;piece_count_2&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;piece_count_2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">packs_df</span><span class="p">[</span><span class="s1">&#39;difficulty_rating_2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;Average&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dealing-with-outliers">
+<h3>2.4 Dealing with Outliers<a class="headerlink" href="#dealing-with-outliers" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">member_holdtime_df</span> <span class="o">=</span> <span class="n">member_holdtime_df</span><span class="p">[(</span><span class="n">member_holdtime_df</span><span class="p">[</span><span class="s1">&#39;holdtime&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">&amp;</span> 
+                                        <span class="p">(</span><span class="n">member_holdtime_df</span><span class="p">[</span><span class="s1">&#39;holdtime&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">150</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="merging-data">
+<h2>3. Merging Data<a class="headerlink" href="#merging-data" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">member_holdtime_df</span><span class="o">.</span><span class="n">puzzlepack</span><span class="o">.</span><span class="n">nunique</span><span class="p">(),</span> <span class="n">packs_df</span><span class="o">.</span><span class="n">pack_name</span><span class="o">.</span><span class="n">nunique</span><span class="p">(),</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(968, 913)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">member_holdtime_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">packs_df</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;puzzlepack&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;pack_name&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>memberID</th>
+      <th>holdtime</th>
+      <th>puzzlepack</th>
+      <th>pack_name</th>
+      <th>piece_count_1</th>
+      <th>piece_count_2</th>
+      <th>difficulty_rating_1</th>
+      <th>difficulty_rating_2</th>
+      <th>brand_2</th>
+      <th>brand_1</th>
+      <th>num_puzzles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>member1</td>
+      <td>2.939411</td>
+      <td>Artifact Puzzles Justin Hillgrove Word Travels South Artifact Puzzles Justin Hillgrove Word Travels West</td>
+      <td>Artifact Puzzles Justin Hillgrove Word Travels South Artifact Puzzles Justin Hillgrove Word Travels West</td>
+      <td>456</td>
+      <td>548</td>
+      <td>A-Easy</td>
+      <td>Average</td>
+      <td>Artifact</td>
+      <td>Artifact</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>member15</td>
+      <td>16.840847</td>
+      <td>Artifact Puzzles Justin Hillgrove Word Travels South Artifact Puzzles Justin Hillgrove Word Travels West</td>
+      <td>Artifact Puzzles Justin Hillgrove Word Travels South Artifact Puzzles Justin Hillgrove Word Travels West</td>
+      <td>456</td>
+      <td>548</td>
+      <td>A-Easy</td>
+      <td>Average</td>
+      <td>Artifact</td>
+      <td>Artifact</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">difficulty_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A-Easy&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Average&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Hard&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Really-Hard&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;difficulty_rating_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;difficulty_rating_1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">difficulty_mapping</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">na_action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;difficulty_rating_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;difficulty_rating_2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">difficulty_mapping</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">na_action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>memberID                0
+holdtime                0
+puzzlepack              0
+pack_name               0
+piece_count_1          24
+piece_count_2           0
+difficulty_rating_1     0
+difficulty_rating_2     0
+brand_2                 0
+brand_1                 0
+num_puzzles             0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># masking puzzle names </span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;puzzlepack&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/members_packs_cleaned.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introduction</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="eda.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Member Hold Times EDA</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jonathan Alexander, Madalyn Li, Hannah Luebbering, Aishwarya Singh<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

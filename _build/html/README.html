@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction &#8212; Puzzle Schedules | 2023</title>
+    <title>Repository for Hoefnagel Puzzle Club &#8212; Puzzle Schedules | 2023</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Notebook 1. Data Analysis" href="Notebook1-DataAnalysis.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -107,8 +106,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Introduction
                 </a>
             </li>
@@ -116,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Notebook1-DataAnalysis.html">
-   Notebook 1. Data Analysis
+   1. Preliminary Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
@@ -175,35 +174,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/intro.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -239,24 +209,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/intro.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="_sources/intro.md"
+        <a href="_sources/README.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -316,8 +269,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citations">
-   Citations
+  <a class="reference internal nav-link" href="#member-hold-times-eda">
+   Member Hold Times EDA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#puzzle-packs-eda">
+   Puzzle Packs EDA
   </a>
  </li>
 </ul>
@@ -329,7 +287,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction</h1>
+                <h1>Repository for Hoefnagel Puzzle Club</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -340,8 +298,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citations">
-   Citations
+  <a class="reference internal nav-link" href="#member-hold-times-eda">
+   Member Hold Times EDA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#puzzle-packs-eda">
+   Puzzle Packs EDA
   </a>
  </li>
 </ul>
@@ -354,56 +317,38 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
-<p class="about">
-<p><code class="docutils literal notranslate"><span class="pre">Hoefnagel</span></code> Wooden Jigsaw Puzzle Club is a company based in Port Townsend, Washington that contains a library of over 1000 <strong>puzzles</strong> rented by a network of puzzle enthusiasts worldwide. Their ultimate business goal is to reduce shipping costs while optimizing for consumer satisfaction. Right now, when an active member of the club finishes a puzzle, they start a return process on the site, which generates a shipping label for the user to ship this puzzle to the next user’s location in the overall puzzle network. This next location is determined by a model that considers several factors, such as the puzzle’s current location, the next user’s location, and the puzzle’s rank on the next user’s wishlist.</p>
-</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Notebook1-DataAnalysis.html">Notebook 1. Data Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eda.html">Member Hold Times EDA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eda.html#puzzle-packs-eda">Puzzle Packs EDA</a></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="repository-for-hoefnagel-puzzle-club">
+<h1>Repository for Hoefnagel Puzzle Club<a class="headerlink" href="#repository-for-hoefnagel-puzzle-club" title="Permalink to this headline">#</a></h1>
+<hr class="docutils" />
+<section id="member-hold-times-eda">
+<h2>Member Hold Times EDA<a class="headerlink" href="#member-hold-times-eda" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>member_hold_times_and_packs.tsv</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">member</span></code> - Unique identifiers for each person</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hold_time</span></code> - number of days the person had the pack</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pack_name</span></code> - name of the pack (may have more than 1 puzzle per pack)</p></li>
 </ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note</p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Jupyter Book uses <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/">Jupytext</a> to convert text-based files to notebooks, and can support <a class="reference external" href="https://jupyterbook.org/file-types/jupytext.html">many other text-based notebook files</a>.</p>
-</div>
-<figure class="align-default">
-<a class="reference internal image-reference" href="_images/difficulty_dist.png"><img alt="_images/difficulty_dist.png" src="_images/difficulty_dist.png" style="width: 540.0px; height: 180.0px;" /></a>
-</figure>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
-</div>
-</div>
-</div>
-<section id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id1">[<a class="reference internal" href="#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
-<p>Moreover, you can insert a bibliography into your page with this syntax:
-The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
-render properly.</p>
-<div class="docutils container" id="id2">
-<dl class="citation">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">HdHPK14</a></span></dt>
-<dd><p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
-</dd>
-</dl>
-</div>
+<p><img alt="" src="_images/hold_times_dist.png" />
+<img alt="" src="_images/hold_times_dist2.png" /></p>
+<p><img alt="" src="_images/member_freq_dist.png" /></p>
+</section>
+<section id="puzzle-packs-eda">
+<h2>Puzzle Packs EDA<a class="headerlink" href="#puzzle-packs-eda" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>packs.tsv</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pack_name</span></code> - name of the pack (may have more than 1 puzzle per pack)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brand</span></code> - brand name of puzzle pack</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">piece_count</span></code> - number of pieces in puzzle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">difficulty_rating</span></code> - difficulty rating for puzzle</p></li>
+</ul>
+<p><img alt="" src="_images/piece_count_dist.png" />
+<img alt="" src="_images/piece_count_dist2.png" /></p>
+<p><img alt="" src="_images/brand_dist.png" />
+<img alt="" src="_images/difficulty_dist.png" /></p>
 </section>
 </section>
 
@@ -434,13 +379,6 @@ render properly.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="Notebook1-DataAnalysis.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notebook 1. Data Analysis</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

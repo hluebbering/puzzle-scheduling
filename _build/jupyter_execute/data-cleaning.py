@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# ## 1. Preliminary Data Analysis
+# 
+# ### 1.1 Importing Libraries and Dataset
+# 
+
 # In[1]:
 
 
@@ -9,6 +14,9 @@ import matplotlib.pyplot as plt
 import numpy
 
 
+
+# 
+# 
 # ## Puzzles Data Cleaning
 # 
 # 

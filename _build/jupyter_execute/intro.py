@@ -17,14 +17,12 @@
 # 
 # 
 # 
-# Here is a "note" directive:
 # 
 # ```{note}
 # Here is a note
 # ```
 # 
 # 
-# Here is an inline directive to refer to a document: {doc}`eda`.
 # 
 # 
 # ```{seealso}

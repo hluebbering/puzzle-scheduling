@@ -15,6 +15,7 @@ sns.set_style({'font.family': 'Roboto'})
 
 # jupyter-book clean ./ --all
 # jupyter-book build ./
+# ghp-import -n -p -f _build/html
 
 
 # ## Member Hold Times EDA
