@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1. Preliminary Data Analysis &#8212; Puzzle Schedules | 2023</title>
+    <title>Notebook 1. Data Analysis &#8212; Puzzle Schedules | 2023</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -117,7 +117,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. Preliminary Data Analysis
+   Notebook 1. Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
@@ -299,51 +299,51 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preliminary-data-analysis">
    1. Preliminary Data Analysis
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#importing-libraries-and-dataset">
      1.1 Importing Libraries and Dataset
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
      1.2 Preliminary Data Analysis
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-cleaning">
    2. Data Cleaning
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#separating-columns">
      2.1 Separating columns
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fixing-data-inconsistencies">
      2.2 Fixing Data inconsistencies
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dealing-with-missing-value">
      2.3 Dealing with Missing value
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dealing-with-outliers">
      2.4 Dealing with Outliers
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#merging-data">
    3. Merging Data
   </a>
@@ -357,7 +357,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>1. Preliminary Data Analysis</h1>
+                <h1>Notebook 1. Data Analysis</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -367,51 +367,51 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preliminary-data-analysis">
    1. Preliminary Data Analysis
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#importing-libraries-and-dataset">
      1.1 Importing Libraries and Dataset
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
      1.2 Preliminary Data Analysis
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-cleaning">
    2. Data Cleaning
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#separating-columns">
      2.1 Separating columns
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fixing-data-inconsistencies">
      2.2 Fixing Data inconsistencies
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dealing-with-missing-value">
      2.3 Dealing with Missing value
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dealing-with-outliers">
      2.4 Dealing with Outliers
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#merging-data">
    3. Merging Data
   </a>
@@ -426,7 +426,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><strong>1. Preliminary Data Analysis</strong></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="notebook-1-data-analysis">
+<h1>Notebook 1. Data Analysis<a class="headerlink" href="#notebook-1-data-analysis" title="Permalink to this headline">#</a></h1>
+<p><strong>1. Preliminary Data Analysis</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1.1 Importing libraries and dataset 
 1.2 Preliminary Data Analysis
 </pre></div>
@@ -440,9 +442,9 @@ title="Print to PDF"
 </div>
 <p><strong>3. Merging Data</strong></p>
 <section id="preliminary-data-analysis">
-<h1>1. Preliminary Data Analysis<a class="headerlink" href="#preliminary-data-analysis" title="Permalink to this headline">#</a></h1>
+<h2>1. Preliminary Data Analysis<a class="headerlink" href="#preliminary-data-analysis" title="Permalink to this headline">#</a></h2>
 <section id="importing-libraries-and-dataset">
-<h2>1.1 Importing Libraries and Dataset<a class="headerlink" href="#importing-libraries-and-dataset" title="Permalink to this headline">#</a></h2>
+<h3>1.1 Importing Libraries and Dataset<a class="headerlink" href="#importing-libraries-and-dataset" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -640,7 +642,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="id1">
-<h2>1.2 Preliminary Data Analysis<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h3>1.2 Preliminary Data Analysis<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>This is done to understand the data better so we can clean it accordingly. Here are some questions we are exploring -</p>
 <ol class="simple">
 <li><p>Does packname have a pattern?</p></li>
@@ -800,9 +802,9 @@ Need to remove outliers in this case</p>
 </section>
 </section>
 <section id="data-cleaning">
-<h1>2. Data Cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this headline">#</a></h1>
+<h2>2. Data Cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this headline">#</a></h2>
 <section id="separating-columns">
-<h2>2.1 Separating columns<a class="headerlink" href="#separating-columns" title="Permalink to this headline">#</a></h2>
+<h3>2.1 Separating columns<a class="headerlink" href="#separating-columns" title="Permalink to this headline">#</a></h3>
 <p>Separate columns into</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">pack_name</span></code>, <code class="docutils literal notranslate"><span class="pre">brand_0</span></code>, <code class="docutils literal notranslate"><span class="pre">brand_1</span></code>, <code class="docutils literal notranslate"><span class="pre">piece_count_0</span></code>, <code class="docutils literal notranslate"><span class="pre">piece_count_1</span></code>, <code class="docutils literal notranslate"><span class="pre">difficulty_0</span></code>, <code class="docutils literal notranslate"><span class="pre">difficulty_1</span></code></p></li>
@@ -886,7 +888,7 @@ dtype: int64
 </div>
 </section>
 <section id="fixing-data-inconsistencies">
-<h2>2.2 Fixing Data inconsistencies<a class="headerlink" href="#fixing-data-inconsistencies" title="Permalink to this headline">#</a></h2>
+<h3>2.2 Fixing Data inconsistencies<a class="headerlink" href="#fixing-data-inconsistencies" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Some rows straight up have nothing, drop these as there is nothing to be done</span>
@@ -1146,7 +1148,7 @@ dtype: int64
 </div>
 </section>
 <section id="dealing-with-missing-value">
-<h2>2.3 Dealing with Missing value<a class="headerlink" href="#dealing-with-missing-value" title="Permalink to this headline">#</a></h2>
+<h3>2.3 Dealing with Missing value<a class="headerlink" href="#dealing-with-missing-value" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">member_holdtime_df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -1264,7 +1266,7 @@ dtype: int64
 </div>
 </section>
 <section id="dealing-with-outliers">
-<h2>2.4 Dealing with Outliers<a class="headerlink" href="#dealing-with-outliers" title="Permalink to this headline">#</a></h2>
+<h3>2.4 Dealing with Outliers<a class="headerlink" href="#dealing-with-outliers" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">member_holdtime_df</span> <span class="o">=</span> <span class="n">member_holdtime_df</span><span class="p">[(</span><span class="n">member_holdtime_df</span><span class="p">[</span><span class="s1">&#39;holdtime&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">&amp;</span> 
@@ -1276,7 +1278,7 @@ dtype: int64
 </section>
 </section>
 <section id="merging-data">
-<h1>3. Merging Data<a class="headerlink" href="#merging-data" title="Permalink to this headline">#</a></h1>
+<h2>3. Merging Data<a class="headerlink" href="#merging-data" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">member_holdtime_df</span><span class="o">.</span><span class="n">puzzlepack</span><span class="o">.</span><span class="n">nunique</span><span class="p">(),</span> <span class="n">packs_df</span><span class="o">.</span><span class="n">pack_name</span><span class="o">.</span><span class="n">nunique</span><span class="p">(),</span> 
@@ -1409,6 +1411,7 @@ dtype: int64
 </div>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
