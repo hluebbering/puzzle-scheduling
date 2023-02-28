@@ -57,9 +57,10 @@ member_holdtime_df.head()
 
 
 # **Data 2: packs.tsv**
-# * memberID - Unique identifiers for each person
-# * holdtime - number of days the person had the pack
-# * puzzlepack - name of the pack (may have more than 1 puzzle per pack)
+# * `pack_name` - name of the pack (may have more than 1 puzzle per pack)
+# * `brand` - brand name of puzzle pack
+# * `piece_count` - number of pieces in puzzle
+# * `difficulty_rating` - difficulty rating for puzzle
 
 # In[4]:
 
@@ -423,6 +424,12 @@ df.drop(['puzzlepack'], axis=1, inplace = True)
 
 
 # In[41]:
+
+
+df.shape
+
+
+# In[42]:
 
 
 df.to_csv('data/members_packs_cleaned.csv', index=False)

@@ -18,6 +18,8 @@ sns.set_style({'font.family': 'Roboto'})
 # ghp-import -n -p -f _build/html
 
 
+# # Notebook 2. EDA
+# 
 # ## Member Hold Times EDA
 # 
 # **1. member_hold_times_and_packs.tsv**

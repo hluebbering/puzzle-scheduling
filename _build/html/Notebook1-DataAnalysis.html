@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Member Hold Times EDA" href="eda.html" />
+    <link rel="next" title="Notebook 2. EDA" href="eda.html" />
     <link rel="prev" title="Introduction" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -122,7 +122,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="eda.html">
-   Member Hold Times EDA
+   Notebook 2. EDA
   </a>
  </li>
 </ul>
@@ -548,9 +548,10 @@ title="Print to PDF"
 </div>
 <p><strong>Data 2: packs.tsv</strong></p>
 <ul class="simple">
-<li><p>memberID - Unique identifiers for each person</p></li>
-<li><p>holdtime - number of days the person had the pack</p></li>
-<li><p>puzzlepack - name of the pack (may have more than 1 puzzle per pack)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pack_name</span></code> - name of the pack (may have more than 1 puzzle per pack)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brand</span></code> - brand name of puzzle pack</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">piece_count</span></code> - number of pieces in puzzle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">difficulty_rating</span></code> - difficulty rating for puzzle</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1406,6 +1407,18 @@ dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(18255, 10)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/members_packs_cleaned.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1451,7 +1464,7 @@ dtype: int64
     <a class='right-next' id="next-link" href="eda.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Member Hold Times EDA</p>
+        <p class="prev-next-title">Notebook 2. EDA</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

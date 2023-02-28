@@ -1,6 +1,29 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# <div class = "header">
+# 
+# <div class = "topheader">
+# <span class = "school">University of Washington</span>
+# <span class = "department">Data Science</span>
+# </div>
+# 
+# 
+# <h1 class="bottomheader"> Puzzle Schedules </h1>
+# 
+# </div>
+# 
+# 
+# 
+# 
+# <div class = "authors">
+# 
+# <p>Jonathan Alexander, Madalyn Li, Hannah Luebbering, Aishwarya Singh</p>
+# 
+# </div>
+# 
+# 
+# 
 # # Introduction
 # 
 # 
@@ -12,45 +35,99 @@
 # 
 # 
 # 
-# ```{tableofcontents}
-# ```
 # 
 # 
-# 
-# 
-# ```{note}
-# Here is a note
-# ```
-# 
-# 
-# 
+# <span class = "toc">Project Notebooks:</span>
 # 
 # ```{seealso}
-# Jupyter Book uses [Jupytext](https://jupytext.readthedocs.io/en/latest/) to convert text-based files to notebooks, and can support [many other text-based notebook files](https://jupyterbook.org/file-types/jupytext.html).
+# - Notebook 1. Preliminary Data Analysis and Data Cleaning (EDA)
+# - Notebook 2. Feature Engineering
+# 
+# - Notebook 3. Mode Building
+#     - Benchmark Model
+#     - Linear Regression
+#     - Decision Tree
+# 
 # ```
 # 
 # 
 # 
 # 
-# ```{figure} /_static/images/difficulty_dist.png
-# :scale: 3%
-# ```
+# 
+# 
+# <span class = "toc">Project Data:</span>
+# 
+# <div class = "mygrid">
+# <div class = "data">
+# <span class = "dataset">Data 1. member holdtimes</span>
+# <div class = "myicon 1"></div>
+# <span class = "vars">Number of Columns: 3</span>
+# <span class = "vars">Number of Rows: 19733</span>
+# </div>
+# 
+# <div class = "data">
+# <span class = "dataset">Data 2. packs</span>
+# <div class = "myicon 2"></div>
+# <span class = "vars">Number of Columns: 4</span>
+# <span class = "vars">Number of Rows: 920</span>
+# </div>
+# 
+# <div class = "data">
+# <span class = "dataset">Data 3. Combined Data</span>
+# <div class = "myicon 3"></div>
+# <span class = "vars">Number of Columns: 10</span>
+# <span class = "vars">Number of Rows: 18255</span>
+# </div>
+# 
+# </div>
+# 
+# 
+# 
+# <span class = "toc">Combined Data Preview: </span>
 
 # In[1]:
 
 
-print(2 + 2)
+import pandas as pd
+member_df = pd.read_csv("data/members_packs_cleaned.csv", header = 0)
+member_df.head()
 
 
+# ```{figure} /_static/images/hold_times_dist.png
+# :scale: 5%
+# ```
+# 
+# 
+# 
+# 
+# 
+# ## Project Goals 
+# 
+# 
+# ## Conclusions
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
 # ## Citations
 # 
 # You can also cite references that are stored in a `bibtex` file. For example,
 # the following syntax: `` {cite}`holdgraf_evidence_2014` `` will render like
 # this: {cite}`holdgraf_evidence_2014`.
 # 
-# Moreover, you can insert a bibliography into your page with this syntax:
-# The `{bibliography}` directive must be used for all the `{cite}` roles to
-# render properly.
 # 
 # 
 # ```{bibliography}

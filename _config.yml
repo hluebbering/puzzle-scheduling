@@ -33,7 +33,7 @@ html:
   use_repository_button: true
   favicon: ""
   use_edit_page_button: false
-  use_multitoc_numbering: true
+#  use_multitoc_numbering: true
   extra_navbar: Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.
   extra_footer: ""
   home_page_in_navbar: true
