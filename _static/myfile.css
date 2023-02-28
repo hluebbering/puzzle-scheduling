@@ -327,4 +327,8 @@ h1, h2 {
     max-width: 100% !important;
 }
 
+.cell_output.docutils.container {
+    min-width: fit-content !important;
+}
+
 }
