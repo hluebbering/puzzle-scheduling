@@ -156,13 +156,13 @@ span.dataset {
 }
 
 span.vars {
-    color: #9e9d9d;
     color: #c6c6c6;
+    color: #b3b3b3;
     letter-spacing: 1.75px;
     font-weight: 400;
     line-height: 2;
     font-size: 16px;
-    font-size: 10px;
+    font-size: 11px;
 }
 
 
@@ -173,7 +173,7 @@ span.vars {
 }
 
 
-pre {
+pre#codecell0 {
     color: #abb2bf;
     background: #282c34;
     padding: 20px 20px !important;
@@ -182,7 +182,7 @@ pre {
     box-sizing: border-box;
 }
 
-.highlight .mi {
+#codecell0 .highlight .mi {
     color: #ffc107;
 }
 
