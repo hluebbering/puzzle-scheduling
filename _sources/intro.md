@@ -13,7 +13,7 @@ kernelspec:
 ---
 
 
-<div class = "full-width header">
+<div class = "header">
 
 <div class = "topheader">
 <span class = "school">University of Washington</span>
