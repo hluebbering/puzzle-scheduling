@@ -305,24 +305,26 @@ h1, h2 {
 
 @media print {
 #jb-print-docs-body h1 {
-    font-size: 3em;
-    text-align: center;
-    margin-bottom: 0;
+    display: none !important;
 }
 
 #jb-print-toc {
-    margin-bottom: 1.5rem;
+    display: none !important;
 }
 
 #main-content h1:first-of-type {
-    display: flex;
+    display: flex !important;
 }
 
 #main-content {
-    max-width: 92%!important;
-    margin-left: 2%!important;
+    max-width: 95% !important;
+    margin-left: 2% !important;
     margin-right: 2% !important;
     padding-top: 0;
+}
+
+.cell.tag_hide-input.docutils.container {
+    max-width: 100% !important;
 }
 
 }
