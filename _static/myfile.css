@@ -299,12 +299,30 @@ h1, h2 {
     font-size: 26px;
 }
 
-.col-md-3.bd-toc.show.noprint {
-    display: none;
+
+
+
+
+@media print {
+#jb-print-docs-body h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 0;
 }
 
-@media (min-width: 768px) {
-#main-content {
-    max-width: 100%;
+#jb-print-toc {
+    margin-bottom: 1.5rem;
 }
+
+#main-content h1:first-of-type {
+    display: flex;
+}
+
+#main-content {
+    max-width: 92%!important;
+    margin-left: 2%!important;
+    margin-right: 2% !important;
+    padding-top: 0;
+}
+
 }
