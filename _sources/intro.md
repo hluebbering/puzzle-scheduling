@@ -21,7 +21,7 @@ kernelspec:
 </div>
 
 
-<h1 class="bottomheader"> Puzzle Schedules | 2023 </h1>
+<h1 class="bottomheader"> Puzzle Schedules </h1>
 
 </div>
 
@@ -52,8 +52,14 @@ kernelspec:
 <span class = "toc">Project Notebooks:</span>
 
 ```{seealso}
-- Notebook 1. Preliminary Data Analysis and Data Cleaning
-- Notebook 2. EDA
+- Notebook 1. Preliminary Data Analysis and Data Cleaning (EDA)
+- Notebook 2. Feature Engineering
+
+- Notebook 3. Mode Building
+    - Benchmark Model
+    - Linear Regression
+    - Decision Tree
+
 ```
 
 
@@ -64,25 +70,25 @@ kernelspec:
 <span class = "toc">Project Data:</span>
 
 <div class = "mygrid">
-<div class = "data" style = "background: #9ed342a6;">
-<span class = "dataset">Data 1. member holdtimes/packs</span>
+<div class = "data">
+<span class = "dataset">Data 1. member holdtimes</span>
 <div class = "myicon 1"></div>
-<span class = "vars">ncols: </span>
-<span class = "vars">nrows: </span>
+<span class = "vars">Number of Columns: 3</span>
+<span class = "vars">Number of Rows: 19733</span>
 </div>
 
-<div class = "data" style = "background: #40d3e2a6;">
+<div class = "data">
 <span class = "dataset">Data 2. packs</span>
 <div class = "myicon 2"></div>
-<span class = "vars">ncols: </span>
-<span class = "vars">nrows: </span>
+<span class = "vars">Number of Columns: 4</span>
+<span class = "vars">Number of Rows: 920</span>
 </div>
 
-<div class = "data" style = "background: #41a7e0a6;">
+<div class = "data">
 <span class = "dataset">Data 3. Combined Data</span>
 <div class = "myicon 3"></div>
-<span class = "vars">ncols: </span>
-<span class = "vars">nrows: </span>
+<span class = "vars">Number of Columns: 10</span>
+<span class = "vars">Number of Rows: 18255</span>
 </div>
 
 </div>
@@ -101,8 +107,10 @@ member_df.head()
 
 
 ```{figure} /_static/images/hold_times_dist.png
-:scale: 3%
+:scale: 5%
 ```
+
+
 
 
 

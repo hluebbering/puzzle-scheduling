@@ -548,9 +548,10 @@ title="Print to PDF"
 </div>
 <p><strong>Data 2: packs.tsv</strong></p>
 <ul class="simple">
-<li><p>memberID - Unique identifiers for each person</p></li>
-<li><p>holdtime - number of days the person had the pack</p></li>
-<li><p>puzzlepack - name of the pack (may have more than 1 puzzle per pack)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pack_name</span></code> - name of the pack (may have more than 1 puzzle per pack)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brand</span></code> - brand name of puzzle pack</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">piece_count</span></code> - number of pieces in puzzle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">difficulty_rating</span></code> - difficulty rating for puzzle</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1400,6 +1401,18 @@ dtype: int64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># masking puzzle names </span>
 <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;puzzlepack&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(18255, 10)
 </pre></div>
 </div>
 </div>

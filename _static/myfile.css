@@ -95,6 +95,8 @@ span.pre {
     background: url('images/puzzleoutline.png') #e9ecef;
     background-size: cover;
     background-position: 50% 100%;
+    padding: 5px 10px;
+
 }
 
 .topheader {
@@ -105,33 +107,63 @@ span.pre {
 
 h1.bottomheader {
     margin-top: 150px;
+    font-size: 34px;
+    margin-bottom: 0;
+    font-family: 'Roboto';
+    background: linear-gradient(90deg, #343a40, #212529);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #333;
+    font-weight: 800 !important;
+    letter-spacing: 0.75px;
+
+    text-transform: capitalize;
+    letter-spacing: 0px;
+    font-family: 'Manrope' !important;
+    font-weight: 800 !important;
 }
 
+.admonition.seealso .admonition-title:before {
+    color: #FB607F;
+}
 
 .mygrid {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
     width: 100%;
-    background-color: #eee!important;
-    box-shadow: -0.2em -0.125em 0.125em rgb(0 0 0 / 25%), 0 0 0 0.04em rgb(0 0 0 / 30%), 0.02em 0.02em 0.02em rgb(0 0 0 / 40%) inset, -0.05em -0.05em 0.02em rgb(255 255 255 / 80%) inset !important;
-    border: 1px solid #eee;
+    gap: 0px;
 }
 
 
 .data {
-    border-right: 1px solid whitesmoke;
+    border: 1px solid whitesmoke;
     display: flex;
     flex-direction: column;
     padding: 2px 4px;
+    box-shadow: inset 0px 2px 3px rgb(255 255 255 / 40%);
+    background: #eee;
 }
 
 span.dataset {
     color: #444444;
     font-weight: 600;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 15%);
+    font-size: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+
 }
 
 span.vars {
     color: #9e9d9d;
+    color: #c6c6c6;
+    letter-spacing: 1.75px;
+    font-weight: 400;
+    line-height: 2;
+    font-size: 16px;
+    font-size: 10px;
 }
 
 
@@ -152,31 +184,127 @@ pre#codecell0 {
 }
 
 .highlight .mi {
-    color: #0e84b5;
+    color: lightseagreen;
+    color: #FB607F;
+    color: darkseagreen;
+    color: #ffc107;
 }
 
 .highlight .nn {
-    font-weight: bold;
-    color: #c678dd;
+    font-weight: 500;
+    color: #27b1cd;
+    color: lightseagreen;
+    color: #DB747A;
 }
 
 .highlight .k, .highlight .kn {
-    font-weight: bold;
+    color: #c678dd;
     color: #e6c07b;
+    color: #40d3e2;
+    color: darkseagreen;
+    color: #DB747A;
+    color: #E9CBCB;
+
 }
 
 .dataframe thead th {
     text-align: right;
-    font-size: 9px;
+    font-size: 10px;
     color: #494949;
+    letter-spacing: -0.25px;
+    background-color: #00BCD4;
+    
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    background-image: linear-gradient(#ffffff75, #eeeeee3d);
+
+    background-color: #e7b8b8;
+    font-size: 10px;
+    font-weight: 600;
+    color: #ffffff;
+
+
 }
 
+
 tr {
-    font-size: 8px;
+    font-size: 10px;
+    color: #757575;
+
 }
+
+div.cell div.cell_input {
+    padding-left: 0em;
+    padding-right: 0em;
+    border: 1px #ccc solid;
+    background-color: #f7f7f7;
+    border-left-color: #E2E97A;
+    border-left-width: medium;
+}
+
 
 .output.text_html {
     width: 98%;
     overflow: overlay;
 }
 
+
+
+span.toc {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 22px !important;
+    display: flex;
+    margin-bottom: -6px !important;
+}
+
+
+
+span.department, span.school {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+
+.myicon {
+    content: "";
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.myicon.\33 {
+    background-image: url(images/icons/pinkpuzzle2.png);
+    background-image: url(images/icons/member2.png);
+}
+
+.myicon.\32 {
+    background-image: url(images/icons/puzzle6.png);
+}
+
+.myicon.\31 {
+    background-image: url(images/icons/member3.png);
+}
+
+
+.authors {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+h1, h2 {
+    font-family: 'Manrope';
+    font-weight: 800;
+    font-size: 26px;
+}
