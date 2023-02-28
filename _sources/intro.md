@@ -13,7 +13,7 @@ kernelspec:
 ---
 
 
-<div class = "header">
+<div class = "full-width header">
 
 <div class = "topheader">
 <span class = "school">University of Washington</span>
@@ -36,7 +36,7 @@ kernelspec:
 
 
 
-# Introduction
+<h1> Introduction </h1>
 
 
 <p class="about">
@@ -100,6 +100,7 @@ kernelspec:
 
 
 ```{code-cell}
+:tags: ["hide-input"]
 import pandas as pd
 member_df = pd.read_csv("data/members_packs_cleaned.csv", header = 0)
 member_df.head()
