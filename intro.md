@@ -21,7 +21,7 @@ kernelspec:
 </div>
 
 
-<h1 class="bottomheader"> Puzzle Schedules </h1>
+<h1 class="bottomheader"> Puzzle Schedules | 2023</h1>
 
 </div>
 
@@ -54,11 +54,8 @@ kernelspec:
 ```{seealso}
 - Notebook 1. Preliminary Data Analysis and Data Cleaning (EDA)
 - Notebook 2. Feature Engineering
-
-- Notebook 3. Mode Building
-    - Benchmark Model
-    - Linear Regression
-    - Decision Tree
+- Notebook 3. Model Building
+    - Benchmark Model, Linear Regression, and Decision Tree
 
 ```
 
@@ -71,14 +68,14 @@ kernelspec:
 
 <div class = "mygrid">
 <div class = "data">
-<span class = "dataset">Data 1. member holdtimes</span>
+<span class = "dataset">Data 1. Member Holdtimes</span>
 <div class = "myicon 1"></div>
 <span class = "vars">Number of Columns: 3</span>
 <span class = "vars">Number of Rows: 19733</span>
 </div>
 
 <div class = "data">
-<span class = "dataset">Data 2. packs</span>
+<span class = "dataset">Data 2. Puzzle Packs</span>
 <div class = "myicon 2"></div>
 <span class = "vars">Number of Columns: 4</span>
 <span class = "vars">Number of Rows: 920</span>
@@ -108,7 +105,7 @@ member_df.head()
 
 
 ```{figure} /_static/images/hold_times_dist.png
-:scale: 5%
+:scale: 6%
 ```
 
 
