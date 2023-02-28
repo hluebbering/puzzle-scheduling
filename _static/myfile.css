@@ -125,6 +125,15 @@ h1.bottomheader {
     padding: 2px 4px;
 }
 
+span.dataset {
+    color: #444444;
+    font-weight: 600;
+}
+
+span.vars {
+    color: #9e9d9d;
+}
+
 
 .toctree-wrapper.compound ul {
     background-color: #eee!important;
@@ -143,16 +152,31 @@ pre#codecell0 {
 }
 
 .highlight .mi {
-    color: #d19a66;
+    color: #0e84b5;
 }
 
-.highlight .k, .highlight .kn {
+.highlight .nn {
     font-weight: bold;
     color: #c678dd;
 }
 
-.highlight .nn {
-    color: #0e84b5;
+.highlight .k, .highlight .kn {
     font-weight: bold;
     color: #e6c07b;
 }
+
+.dataframe thead th {
+    text-align: right;
+    font-size: 9px;
+    color: #494949;
+}
+
+tr {
+    font-size: 8px;
+}
+
+.output.text_html {
+    width: 98%;
+    overflow: overlay;
+}
+
