@@ -121,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="eda.html">
-   Member Hold Times EDA
+   Notebook 2. EDA
   </a>
  </li>
 </ul>
@@ -316,6 +316,16 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-goals">
+   Project Goals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusions">
+   Conclusions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#citations">
    Citations
   </a>
@@ -340,6 +350,16 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-goals">
+   Project Goals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusions">
+   Conclusions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#citations">
    Citations
   </a>
@@ -354,49 +374,171 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+  <div class = "header">
+<div class = "topheader">
+<span class = "school">University of Washington</span>
+<span class = "department">Data Science</span>
+</div>
+<h1 class="bottomheader"> Puzzle Schedules | 2023 </h1>
+</div>
+<div class = "authors">
+<p>Jonathan Alexander, Madalyn Li, Hannah Luebbering, Aishwarya Singh</p>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
 <p class="about">
 <p><code class="docutils literal notranslate"><span class="pre">Hoefnagel</span></code> Wooden Jigsaw Puzzle Club is a company based in Port Townsend, Washington that contains a library of over 1000 <strong>puzzles</strong> rented by a network of puzzle enthusiasts worldwide. Their ultimate business goal is to reduce shipping costs while optimizing for consumer satisfaction. Right now, when an active member of the club finishes a puzzle, they start a return process on the site, which generates a shipping label for the user to ship this puzzle to the next user’s location in the overall puzzle network. This next location is determined by a model that considers several factors, such as the puzzle’s current location, the next user’s location, and the puzzle’s rank on the next user’s wishlist.</p>
 </p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Notebook1-DataAnalysis.html">Notebook 1. Data Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eda.html">Member Hold Times EDA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eda.html#puzzle-packs-eda">Puzzle Packs EDA</a></li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note</p>
-</div>
+<p><span class = "toc">Project Notebooks:</span></p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>Jupyter Book uses <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/">Jupytext</a> to convert text-based files to notebooks, and can support <a class="reference external" href="https://jupyterbook.org/file-types/jupytext.html">many other text-based notebook files</a>.</p>
+<ul class="simple">
+<li><p>Notebook 1. Preliminary Data Analysis and Data Cleaning</p></li>
+<li><p>Notebook 2. EDA</p></li>
+</ul>
 </div>
-<figure class="align-default">
-<a class="reference internal image-reference" href="_images/difficulty_dist.png"><img alt="_images/difficulty_dist.png" src="_images/difficulty_dist.png" style="width: 540.0px; height: 180.0px;" /></a>
-</figure>
+<p><span class = "toc">Project Data:</span></p>
+<div class = "mygrid">
+<div class = "data" style = "background: #9ed342a6;">
+<span class = "dataset">Data 1. member holdtimes/packs</span>
+<div class = "myicon 1"></div>
+<span class = "vars">nrows: </span>
+</div>
+<div class = "data" style = "background: #40d3e2a6;">
+<span class = "dataset">Data 2. packs</span>
+<div class = "myicon 2"></div>
+<span class = "vars">nrows: </span>
+</div>
+<div class = "data" style = "background: #41a7e0a6;">
+<span class = "dataset">Data 3. Combined Data</span>
+<div class = "myicon 3"></div>
+<span class = "vars">nrows: </span>
+</div>
+</div>
+<p><span class = "toc">Combined Data Preview: </span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">member_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/members_packs_cleaned.csv&quot;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">member_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>memberID</th>
+      <th>holdtime</th>
+      <th>pack_name</th>
+      <th>piece_count_1</th>
+      <th>piece_count_2</th>
+      <th>difficulty_rating_1</th>
+      <th>difficulty_rating_2</th>
+      <th>brand_2</th>
+      <th>brand_1</th>
+      <th>num_puzzles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>member1</td>
+      <td>2.939411</td>
+      <td>Artifact Puzzles Justin Hillgrove Word Travels...</td>
+      <td>456.0</td>
+      <td>548</td>
+      <td>1</td>
+      <td>2</td>
+      <td>Artifact</td>
+      <td>Artifact</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>member15</td>
+      <td>16.840847</td>
+      <td>Artifact Puzzles Justin Hillgrove Word Travels...</td>
+      <td>456.0</td>
+      <td>548</td>
+      <td>1</td>
+      <td>2</td>
+      <td>Artifact</td>
+      <td>Artifact</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>member17</td>
+      <td>17.904266</td>
+      <td>Artifact Puzzles Justin Hillgrove Word Travels...</td>
+      <td>456.0</td>
+      <td>548</td>
+      <td>1</td>
+      <td>2</td>
+      <td>Artifact</td>
+      <td>Artifact</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>member28</td>
+      <td>19.639178</td>
+      <td>Artifact Puzzles Justin Hillgrove Word Travels...</td>
+      <td>456.0</td>
+      <td>548</td>
+      <td>1</td>
+      <td>2</td>
+      <td>Artifact</td>
+      <td>Artifact</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>member34</td>
+      <td>112.030034</td>
+      <td>Artifact Puzzles Justin Hillgrove Word Travels...</td>
+      <td>456.0</td>
+      <td>548</td>
+      <td>1</td>
+      <td>2</td>
+      <td>Artifact</td>
+      <td>Artifact</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-</div>
-</div>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/hold_times_dist.png"><img alt="_images/hold_times_dist.png" src="_images/hold_times_dist.png" style="width: 360.0px; height: 180.0px;" /></a>
+</figure>
+<section id="project-goals">
+<h2>Project Goals<a class="headerlink" href="#project-goals" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="conclusions">
+<h2>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">#</a></h2>
+</section>
 <section id="citations">
 <h2>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
 <p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
 the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
 this: <span id="id1">[<a class="reference internal" href="#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
-<p>Moreover, you can insert a bibliography into your page with this syntax:
-The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
-render properly.</p>
 <div class="docutils container" id="id2">
 <dl class="citation">
 <dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">HdHPK14</a></span></dt>
@@ -405,6 +547,8 @@ render properly.</p>
 </dl>
 </div>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
