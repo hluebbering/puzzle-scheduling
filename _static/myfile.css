@@ -182,16 +182,16 @@ pre#codecell0 {
     box-sizing: border-box;
 }
 
-#codecell0 .highlight .mi {
+pre#codecell0 span.mi {
     color: #ffc107;
 }
 
-.highlight .nn {
+pre#codecell0 span.nn {
     font-weight: 500;
     color: #DB747A;
 }
 
-.highlight .k, .highlight .kn {
+pre#codecell0 span.k, pre#codecell0 span.kn {
     color: darkseagreen;
     color: #DB747A;
     color: #E9CBCB;
