@@ -111,6 +111,17 @@ member_df.head()
 
 
 
+## Approach 
+
+
+Here are the steps we took to gain a deeper understanding of the data and prepare it for further analysis and modeling.
+
+- Conducted a preliminary data analysis to better understand the data and clean it accordingly. We explored whether pack names showed a pattern, the distribution of hold times, and any apparent relationship between difficulty level and piece count.
+- Preprocessed the data by scaling and encoding the features to prepare it for modeling.
+- Built a model able to accurately predict member puzzle hold times given a puzzle’s difficulty, piece count, and brand.
+
+
+
 
 ## Project Goals 
 
