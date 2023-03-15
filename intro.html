@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Project Goals &#8212; Puzzle Schedules | 2023</title>
+    <title>Introduction &#8212; Puzzle Schedules</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Notebook 1. Data Analysis" href="Notebook1-DataAnalysis.html" />
+    <link rel="next" title="1. Preliminary Data Analysis" href="Notebook1-EDA.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -97,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/puzzle2.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Puzzle Schedules | 2023</h1>
+      <h1 class="site-logo" id="site-title">Puzzle Schedules</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -109,19 +109,29 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Project Goals
+                    Introduction
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Notebook1-DataAnalysis.html">
-   Notebook 1. Data Analysis
+  <a class="reference internal" href="Notebook1-EDA.html">
+   1. Preliminary Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="eda.html">
-   Notebook 2. EDA
+  <a class="reference internal" href="Notebook2-DataCleaning.html">
+   2. Data Cleaning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Notebook3-FeatureEngineering.html">
+   3. Feature Engineering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Notebook4-FeatureImportance.html">
+   4. Feature Importances
   </a>
  </li>
 </ul>
@@ -315,17 +325,24 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Project Goals
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-notebooks">
+   Project Notebooks
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conclusions">
-   Conclusions
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-overview">
+   Data Overview
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#combined-data-preview">
+     Combined Data Preview
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#citations">
    Citations
   </a>
@@ -339,7 +356,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Project Goals</h1>
+                <h1>Introduction</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -349,17 +366,24 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Project Goals
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-notebooks">
+   Project Notebooks
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conclusions">
-   Conclusions
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-overview">
+   Data Overview
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#combined-data-preview">
+     Combined Data Preview
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#citations">
    Citations
   </a>
@@ -379,29 +403,61 @@ title="Print to PDF"
 <span class = "school">University of Washington</span>
 <span class = "department">Data Science</span>
 </div>
-<h1 class="bottomheader"> Puzzle Schedules | 2023</h1>
+<h1 class="bottomheader"> Predicting Hoefnagel Member Puzzle Hold Times</h1>
 </div>
 <div class = "authors">
 <p>Jonathan Alexander, Madalyn Li, Hannah Luebbering, Aishwarya Singh</p>
 </div>
-<h1> Introduction </h1>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
 <p class="about">
-<p><code class="docutils literal notranslate"><span class="pre">Hoefnagel</span></code> Wooden Jigsaw Puzzle Club is a company based in Port Townsend, Washington that contains a library of over 1000 <strong>puzzles</strong> rented by a network of puzzle enthusiasts worldwide. Their ultimate business goal is to reduce shipping costs while optimizing for consumer satisfaction. Right now, when an active member of the club finishes a puzzle, they start a return process on the site, which generates a shipping label for the user to ship this puzzle to the next user’s location in the overall puzzle network. This next location is determined by a model that considers several factors, such as the puzzle’s current location, the next user’s location, and the puzzle’s rank on the next user’s wishlist.</p>
+<p>Hoefnagel Wooden Jigsaw Puzzle Club<span id="id1">[<a class="reference internal" href="#id3" title="Hoefnagel Wooden Jigsaw Puzzle Club. URL: https://www.woodenjigsawpuzzles.com/ (visited on 2023-03-15).">1</a>]</span> is a company based in Port Townsend, Washington that contains a library of over 1000 <strong>puzzles</strong> rented by a network of puzzle enthusiasts worldwide. Their ultimate business goal is to reduce shipping costs while optimizing for consumer satisfaction. Right now, when an active member of the club finishes a puzzle, they start a return process on the site, which generates a shipping label for the user to ship this puzzle to the next user’s location in the overall puzzle network. This next location is determined by a model that considers several factors, such as the puzzle’s current location, the next user’s location, and the puzzle’s rank on the next user’s wishlist.</p>
 </p>
-<p><span class = "toc">Project Notebooks:</span></p>
+<section id="project-notebooks">
+<h2>Project Notebooks<a class="headerlink" href="#project-notebooks" title="Permalink to this headline">#</a></h2>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<ul class="simple">
-<li><p>Notebook 1. Preliminary Data Analysis and Data Cleaning (EDA)</p></li>
-<li><p>Notebook 2. Feature Engineering</p></li>
-<li><p>Notebook 3. Model Building</p>
-<ul>
-<li><p>Benchmark Model, Linear Regression, and Decision Tree</p></li>
-</ul>
-</li>
-</ul>
+<div class="sidemenu">
+  <ul class="sidemenu-entry">
+    <i class="fa fa-artistname" aria-hidden="true"></i>
+    <code>Preliminary Exploratory Data Analysis </code>
+    <li>1.1 Members Data</li> 
+    <li>1.2 Packs Data</li>
+  </ul>
+  <ul class="sidemenu-entry">
+    <i class="fa fa-genres" aria-hidden="true"></i>
+    <code>Data Cleaning </code>
+    <li>2.1 Members Data</li>
+    <li>2.2 Packs Data</li>
+    <li>2.3 Merged Data </li>
+    <li>2.4 Dealing with nulls!!!</li>
+  </ul>
+  <ul class="sidemenu-entry">
+    <i class="fa fa-artistname" aria-hidden="true"></i>
+    <code>Feature Engineering </code>
+  </ul>
+  <ul class="sidemenu-entry">
+    <i class="fa fa-myheart" aria-hidden="true"></i>
+    <code>Feature Importance </code>
+    <li>4.1 OLS Model on complete data</li>
+    <li>4.2 LR Model on complete data</li>
+    <li>4.3 DT Model on complete data</li>
+    <li>4.4 RF Model on complete data</li>
+    <li>4.5 Table representing MAE</li>
+    <li>4.6 Table representing feature importance</li>
+  </ul>
+  <ul class="sidemenu-entry">
+    <i class="fa fa-length" aria-hidden="true"></i>
+    <code>Final Models per person </code>
+    <li>5.1 LR model per person</li>
+    <li>5.2 DT model per person</li>
+    <li>5.3 RF model per person</li>
+  </ul>
 </div>
-<p><span class = "toc">Project Data:</span></p>
+</div>
+</section>
+<section id="data-overview">
+<h2>Data Overview<a class="headerlink" href="#data-overview" title="Permalink to this headline">#</a></h2>
 <div class = "mygrid">
 <div class = "data">
 <span class = "dataset">Data 1. Member Holdtimes</span>
@@ -422,12 +478,13 @@ title="Print to PDF"
 <span class = "vars">Number of Rows: 18255</span>
 </div>
 </div>
-<p><span class = "toc">Combined Data Preview: </span></p>
+<section id="combined-data-preview">
+<h3>Combined Data Preview<a class="headerlink" href="#combined-data-preview" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">member_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/members_packs_cleaned.csv&quot;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">member_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">member_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/df_cleaned.csv&quot;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">member_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -452,13 +509,14 @@ title="Print to PDF"
       <th></th>
       <th>memberID</th>
       <th>holdtime</th>
+      <th>puzzlepack</th>
       <th>pack_name</th>
       <th>piece_count_1</th>
       <th>piece_count_2</th>
       <th>difficulty_rating_1</th>
       <th>difficulty_rating_2</th>
-      <th>brand_2</th>
       <th>brand_1</th>
+      <th>brand_2</th>
       <th>num_puzzles</th>
     </tr>
   </thead>
@@ -468,7 +526,8 @@ title="Print to PDF"
       <td>member1</td>
       <td>2.939411</td>
       <td>Artifact Puzzles Justin Hillgrove Word Travels...</td>
-      <td>456.0</td>
+      <td>Artifact Puzzles Justin Hillgrove Word Travels...</td>
+      <td>456</td>
       <td>548</td>
       <td>1</td>
       <td>2</td>
@@ -478,81 +537,62 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>1</th>
-      <td>member15</td>
-      <td>16.840847</td>
-      <td>Artifact Puzzles Justin Hillgrove Word Travels...</td>
-      <td>456.0</td>
-      <td>548</td>
+      <td>member1</td>
+      <td>0.998885</td>
+      <td>DaVici Puzzles Full Moon Feast DaVici Puzzles ...</td>
+      <td>DaVici Puzzles Full Moon Feast DaVici Puzzles ...</td>
+      <td>195</td>
+      <td>220</td>
       <td>1</td>
-      <td>2</td>
-      <td>Artifact</td>
-      <td>Artifact</td>
+      <td>3</td>
+      <td>DaVici</td>
+      <td>DaVici</td>
       <td>2</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>member17</td>
-      <td>17.904266</td>
-      <td>Artifact Puzzles Justin Hillgrove Word Travels...</td>
-      <td>456.0</td>
-      <td>548</td>
+      <td>member1</td>
+      <td>10.865032</td>
+      <td>DaVici Puzzles Flying Frigate DaVici Puzzles H...</td>
+      <td>DaVici Puzzles Flying Frigate DaVici Puzzles H...</td>
+      <td>332</td>
+      <td>164</td>
       <td>1</td>
-      <td>2</td>
-      <td>Artifact</td>
-      <td>Artifact</td>
+      <td>1</td>
+      <td>DaVici</td>
+      <td>DaVici</td>
       <td>2</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>member28</td>
-      <td>19.639178</td>
-      <td>Artifact Puzzles Justin Hillgrove Word Travels...</td>
-      <td>456.0</td>
-      <td>548</td>
-      <td>1</td>
+      <td>member1</td>
+      <td>22.083971</td>
+      <td>Liberty Puzzles Haeckel Hummingbirds Nautilus ...</td>
+      <td>Liberty Puzzles Haeckel Hummingbirds Nautilus ...</td>
+      <td>485</td>
+      <td>222</td>
       <td>2</td>
-      <td>Artifact</td>
-      <td>Artifact</td>
       <td>2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>member34</td>
-      <td>112.030034</td>
-      <td>Artifact Puzzles Justin Hillgrove Word Travels...</td>
-      <td>456.0</td>
-      <td>548</td>
-      <td>1</td>
-      <td>2</td>
-      <td>Artifact</td>
-      <td>Artifact</td>
+      <td>Liberty</td>
+      <td>Nautilus</td>
       <td>2</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<figure class="align-default">
-<a class="reference internal image-reference" href="_images/hold_times_dist.png"><img alt="_images/hold_times_dist.png" src="_images/hold_times_dist.png" style="width: 720.0px; height: 360.0px;" /></a>
-</figure>
-<section id="project-goals">
-<h1>Project Goals<a class="headerlink" href="#project-goals" title="Permalink to this headline">#</a></h1>
 </section>
-<section id="conclusions">
-<h1>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">#</a></h1>
 </section>
 <section id="citations">
-<h1>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h1>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id1">[<a class="reference internal" href="#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
+<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
 <div class="docutils container" id="id2">
 <dl class="citation">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">HdHPK14</a></span></dt>
-<dd><p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Hoefnagel Wooden Jigsaw Puzzle Club. URL: <a class="reference external" href="https://www.woodenjigsawpuzzles.com/">https://www.woodenjigsawpuzzles.com/</a> (visited on 2023-03-15).</p>
 </dd>
 </dl>
 </div>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -584,10 +624,10 @@ this: <span id="id1">[<a class="reference internal" href="#id3" title="Christoph
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="Notebook1-DataAnalysis.html" title="next page">
+    <a class='right-next' id="next-link" href="Notebook1-EDA.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notebook 1. Data Analysis</p>
+        <p class="prev-next-title">1. Preliminary Data Analysis</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
