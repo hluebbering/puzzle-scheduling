@@ -21,7 +21,7 @@ kernelspec:
 </div>
 
 
-<h1 class="bottomheader"> Puzzle Schedules | 2023</h1>
+<h1 class="bottomheader"> Predicting Hoefnagel Member Puzzle Hold Times</h1>
 
 </div>
 
@@ -36,35 +36,78 @@ kernelspec:
 
 
 
-<h1> Introduction </h1>
+# Introduction
 
 
 <p class="about">
 
-`Hoefnagel` Wooden Jigsaw Puzzle Club is a company based in Port Townsend, Washington that contains a library of over 1000 **puzzles** rented by a network of puzzle enthusiasts worldwide. Their ultimate business goal is to reduce shipping costs while optimizing for consumer satisfaction. Right now, when an active member of the club finishes a puzzle, they start a return process on the site, which generates a shipping label for the user to ship this puzzle to the next user's location in the overall puzzle network. This next location is determined by a model that considers several factors, such as the puzzle's current location, the next user's location, and the puzzle's rank on the next user's wishlist. 
+
+
+Hoefnagel Wooden Jigsaw Puzzle Club{cite}`HoefnagelWoodenJigsaw2020` is a company based in Port Townsend, Washington that contains a library of over 1000 **puzzles** rented by a network of puzzle enthusiasts worldwide. Their ultimate business goal is to reduce shipping costs while optimizing for consumer satisfaction. Right now, when an active member of the club finishes a puzzle, they start a return process on the site, which generates a shipping label for the user to ship this puzzle to the next user's location in the overall puzzle network. This next location is determined by a model that considers several factors, such as the puzzle's current location, the next user's location, and the puzzle's rank on the next user's wishlist. 
 
 </p>
 
 
 
 
+## Project Notebooks
 
-<span class = "toc">Project Notebooks:</span>
+
 
 ```{seealso}
-- Notebook 1. Preliminary Data Analysis and Data Cleaning (EDA)
-- Notebook 2. Feature Engineering
-- Notebook 3. Model Building
-    - Benchmark Model, Linear Regression, and Decision Tree
 
+<div class="sidemenu">
+  <ul class="sidemenu-entry">
+    <i class="fa fa-artistname" aria-hidden="true"></i>
+    <code>Preliminary Exploratory Data Analysis </code>
+    <li>1.1 Members Data</li> 
+    <li>1.2 Packs Data</li>
+  </ul>
+
+  <ul class="sidemenu-entry">
+    <i class="fa fa-genres" aria-hidden="true"></i>
+    <code>Data Cleaning </code>
+    <li>2.1 Members Data</li>
+    <li>2.2 Packs Data</li>
+    <li>2.3 Merged Data </li>
+    <li>2.4 Dealing with nulls!!!</li>
+
+  </ul>
+
+  <ul class="sidemenu-entry">
+    <i class="fa fa-artistname" aria-hidden="true"></i>
+    <code>Feature Engineering </code>
+  </ul>
+
+  <ul class="sidemenu-entry">
+    <i class="fa fa-myheart" aria-hidden="true"></i>
+    <code>Feature Importance </code>
+    <li>4.1 OLS Model on complete data</li>
+    <li>4.2 LR Model on complete data</li>
+    <li>4.3 DT Model on complete data</li>
+    <li>4.4 RF Model on complete data</li>
+    <li>4.5 Table representing MAE</li>
+    <li>4.6 Table representing feature importance</li>
+
+  </ul>
+
+  <ul class="sidemenu-entry">
+    <i class="fa fa-length" aria-hidden="true"></i>
+    <code>Final Models per person </code>
+    <li>5.1 LR model per person</li>
+    <li>5.2 DT model per person</li>
+    <li>5.3 RF model per person</li>
+
+  </ul>
+
+
+  
+  
+</div>
 ```
 
 
-
-
-
-
-<span class = "toc">Project Data:</span>
+## Data Overview
 
 <div class = "mygrid">
 <div class = "data">
@@ -92,50 +135,16 @@ kernelspec:
 
 
 
-<span class = "toc">Combined Data Preview: </span>
+### Combined Data Preview
 
 
 
 ```{code-cell}
 :tags: ["hide-input"]
 import pandas as pd
-member_df = pd.read_csv("data/members_packs_cleaned.csv", header = 0)
-member_df.head()
+member_df = pd.read_csv("data/df_cleaned.csv", header = 0)
+member_df.head(4)
 ```
-
-
-```{figure} /_static/images/hold_times_dist.png
-:scale: 6%
-```
-
-
-
-
-## Approach 
-
-
-Here are the steps we took to gain a deeper understanding of the data and prepare it for further analysis and modeling.
-
-- Conducted a preliminary data analysis to better understand the data and clean it accordingly. We explored whether pack names showed a pattern, the distribution of hold times, and any apparent relationship between difficulty level and piece count.
-- Preprocessed the data by scaling and encoding the features to prepare it for modeling.
-- Built a model able to accurately predict member puzzle hold times given a puzzle’s difficulty, piece count, and brand.
-
-
-
-
-## Project Goals 
-
-
-## Conclusions
-
-
-
-
-
-
-
-
-
 
 
 
@@ -146,11 +155,9 @@ Here are the steps we took to gain a deeper understanding of the data and prepar
 
 ## Citations
 
-You can also cite references that are stored in a `bibtex` file. For example,
-the following syntax: `` {cite}`holdgraf_evidence_2014` `` will render like
-this: {cite}`holdgraf_evidence_2014`.
 
 
 
 ```{bibliography}
+:style: plain
 ```

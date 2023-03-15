@@ -2,6 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
+
+body {
+    font-size: 15px;
+}
 p {
     color: #5f5f5f;
 
@@ -105,9 +109,8 @@ span.pre {
 }
 
 h1.bottomheader {
-    margin-top: 150px;
+    margin-top: 100px;
     font-size: 34px;
-    margin-bottom: 0;
     font-family: 'Roboto';
     background: linear-gradient(90deg, #343a40, #212529);
     -webkit-background-clip: text;
@@ -173,25 +176,19 @@ span.vars {
 }
 
 
-pre#codecell0 {
+/*pre#codecell0 {
     color: #abb2bf;
     background: #282c34;
     padding: 20px 20px !important;
     box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
     color: whitesmoke;
     box-sizing: border-box;
-}
+}*/
 
-pre#codecell0 span.mi {
-    color: #ffc107;
+pre {
+    font-size: 12px;
 }
-
-pre#codecell0 span.nn {
-    font-weight: 500;
-    color: #DB747A;
-}
-
-pre#codecell0 span.k, pre#codecell0 span.kn {
+pree#codecell0 span.k, pre#codecell0 span.kn {
     color: darkseagreen;
     color: #DB747A;
     color: #E9CBCB;
@@ -240,15 +237,20 @@ div.cell div.cell_input {
     overflow: overlay;
 }
 
+h2 {
+    font-size: 1rem !important;
+    border-bottom: 1px solid #e9ecef;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
 
-
-span.toc {
+span.toc, h2, h3 {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-top: 22px !important;
     display: flex;
-    margin-bottom: -6px !important;
+    color: #5f5f5f !important;
 }
 
 
@@ -332,3 +334,143 @@ h1, h2 {
 }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sidemenu {
+    width: 100%;
+    max-width: 500px;
+    transition: all 0.5s;
+    height: calc(100% - 60px);
+    backdrop-filter: blur(10px);
+    color: black;
+    position: relative;
+  }
+  
+  .sidemenu-entry code {
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 400;
+    font-family: Roboto;
+  }
+  
+  .sidemenu-entry {
+    color: black;
+    font-size: 14px;
+    transition: 0.4s all;
+    width: 100%;
+    padding: 8px 30px;
+    margin: 0;
+  }
+
+  .sidemenu-entry li {
+    margin-left: 4px;
+}
+
+  .sidemenu-entry li::before {
+    content: " ";
+    background: pink;
+    padding: 8px;
+    display: inline-flex;
+    border-radius: 50%;
+    margin: auto;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.sidemenu-entry li::marker {
+    content: none;
+    
+}
+  .sidemenu-entry i {
+    margin-right: 15px;
+    color: pink;
+  }
+  .sidemenu-entry:hover {
+    color: rgba(252,101,162,1);
+    padding-left: 60px;
+  }
+  
+  .sidemenu-entry:hover i {
+    color: rgba(252,101,162,1);
+    transform: scale(1.25);
+  }
+  
+  span.sidenote2 {
+    color: #9e9e9e;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .fa-artistname::before,
+  .fa-myheart:before,
+  .fa-genres::before,
+  .fa-name::before,
+  .fa-length::before {
+    content: "\f0a2";
+    background-image: url(https://assets.codepen.io/4927073/myheart.svg);
+    background-size: 110%;
+    background-position: 50% 50%;
+    width: 20px !important;
+    height: 20px !important;
+    display: inline-flex;
+    position: relative;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px;
+    margin: -8px;
+    color: transparent;
+    filter: drop-shadow(0.5px 0.5px 0.5px black);
+  }
+  
+  .fa-artistname::before {
+    background-image: url(https://assets.codepen.io/4927073/find1.png);
+        background-size: 70%;
+      background-repeat: no-repeat;
+      transform: scale(1.1);
+  }
+  
+  .fa-genres::before {
+    background-image: url(https://assets.codepen.io/4927073/gear.png);
+  
+  }
+  
+  .fa-name::before {
+    background-image: url(https://assets.codepen.io/4927073/mixtape1.png);
+        background-size: 100%;
+      background-repeat: no-repeat;
+      
+  }
+  
+  
+  
+  .fa-length::before {
+    background-image: url(https://assets.codepen.io/4927073/arrow1.png);
+    background-size: 102%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      filter: drop-shadow(0.5px 0.5px 0.5px black);
+  }
+  

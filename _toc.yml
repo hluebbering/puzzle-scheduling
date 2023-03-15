@@ -4,5 +4,7 @@
 format: jb-book
 root: intro
 chapters:
-- file: Notebook1-DataAnalysis
-- file: eda
+- file: Notebook1-EDA
+- file: Notebook2-DataCleaning
+- file: Notebook3-FeatureEngineering
+- file: Notebook4-FeatureImportance

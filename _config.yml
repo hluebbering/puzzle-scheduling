@@ -2,7 +2,7 @@
 # jupyter-book build --all ./
 
 
-title: Puzzle Schedules | 2023
+title: Puzzle Schedules
 author: Jonathan Alexander, Madalyn Li, Hannah Luebbering, Aishwarya Singh
 logo: _static/images/icons/puzzle2.png
 
