@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 body {
     font-size: 15px;
@@ -424,7 +421,7 @@ h1, h2 {
   .fa-name::before,
   .fa-length::before {
     content: "\f0a2";
-    background-image: url(https://assets.codepen.io/4927073/myheart.svg);
+    background-image: url(images/icons/myheart.svg);
     background-size: 110%;
     background-position: 50% 50%;
     width: 20px !important;
@@ -443,14 +440,14 @@ h1, h2 {
   }
   
   .fa-artistname::before {
-    background-image: url(https://assets.codepen.io/4927073/find1.png);
+    background-image: url(images/icons/find1.png);
         background-size: 70%;
       background-repeat: no-repeat;
       transform: scale(1.1);
   }
   
   .fa-genres::before {
-    background-image: url(https://assets.codepen.io/4927073/gear.png);
+    background-image: url(images/icons/gear.png);
   
   }
   
@@ -464,7 +461,7 @@ h1, h2 {
   
   
   .fa-length::before {
-    background-image: url(https://assets.codepen.io/4927073/arrow1.png);
+    background-image: url(images/icons/arrow1.png);
     background-size: 102%;
       background-position: 50% 50%;
       background-repeat: no-repeat;
