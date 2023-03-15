@@ -321,6 +321,22 @@ span.department, span.school {
     
 }
 
+
+
+.navbar_extra_footer::before {
+    content: " ";
+    position: absolute;
+    display: flex;
+    background-image: url(images/icons/HoefnagelLogo.png);
+    background-size: cover;
+    padding: 12px 22px;
+    left: 59%;
+    bottom: 12.25%;
+    background-position: 50% 0%;
+    z-index: -8;
+    filter: drop-shadow(1px 1px 1px black) saturate(1.125) opacity(0.95);
+}
+
 section#preliminary-data-analysis::before {
     content: "";
     display: flex;
