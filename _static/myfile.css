@@ -188,19 +188,15 @@ span.vars {
 pre {
     font-size: 12px;
 }
-pree#codecell0 span.k, pre#codecell0 span.kn {
-    color: darkseagreen;
-    color: #DB747A;
-    color: #E9CBCB;
 
-}
 
 .dataframe thead th {
     text-align: right;
     font-size: 10px;
     color: #494949;
     letter-spacing: -0.25px;
-    background-color: #00BCD4;
+    background-color: #DB747A;
+    background-color: #E9CBCB;
     
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -208,6 +204,7 @@ pree#codecell0 span.k, pre#codecell0 span.kn {
     background-image: linear-gradient(#ffffff75, #eeeeee3d);
 
     background-color: #e7b8b8;
+    background-color: #adb5bd;
     font-size: 10px;
     font-weight: 600;
     color: #ffffff;
