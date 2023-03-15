@@ -392,8 +392,7 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">member_holdtime_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/member_hold_times_and_packs_Feb16_2023.tsv&#39;</span><span class="p">,</span>
-                                 <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">member_holdtime_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/member_hold_times_and_packs_Feb16_2023.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">member_holdtime_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;memberID&#39;</span><span class="p">,</span> <span class="s1">&#39;holdtime&#39;</span><span class="p">,</span> <span class="s1">&#39;puzzlepack&#39;</span><span class="p">]</span>
 <span class="n">member_holdtime_df</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
@@ -484,7 +483,7 @@ title="Print to PDF"
 </ul>
 </li>
 </ul>
-<div class="cell tag_hide_code tag_hide_input docutils container">
+<div class="cell tag_hide_code tag_hide_input tag_remove_output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## What is the distribution for holdtimes?</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -502,11 +501,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/Notebook1-EDA_7_0.png" src="_images/Notebook1-EDA_7_0.png" />
 </div>
-</div>
-<div class="cell docutils container">
+<p><img alt="" src="_images/hold_times_dist.png" /></p>
+<div class="cell tag_remove_output tag_hide_input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">member_holdtime_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">member_holdtime_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">member_holdtime_df</span><span class="p">[</span><span class="s1">&#39;holdtime&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">150</span><span class="p">][</span><span class="s1">&#39;holdtime&#39;</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#ffa07a&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -514,16 +511,14 @@ title="Print to PDF"
 <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">member_holdtime_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">member_holdtime_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">member_holdtime_df</span><span class="p">[</span><span class="s1">&#39;holdtime&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">151</span><span class="p">][</span><span class="s1">&#39;holdtime&#39;</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FB607F&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Holdtime over 5 months&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="c1">#plt.savefig(&quot;_static/images/hold_times_dist2.png&quot;, format=&quot;png&quot;, dpi=1200)</span>
+<span class="c1"># plt.savefig(&quot;_static/images/hold_times_dist2.png&quot;, format=&quot;png&quot;, dpi=1200)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/Notebook1-EDA_8_0.png" src="_images/Notebook1-EDA_8_0.png" />
 </div>
-</div>
-<div class="cell tag_hide_input docutils container">
+<p><img alt="" src="_images/hold_times_dist2.png" /></p>
+<div class="cell tag_hide_input tag_remove_output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Distribution of member hold times value counts</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -541,10 +536,8 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/Notebook1-EDA_9_0.png" src="_images/Notebook1-EDA_9_0.png" />
 </div>
-</div>
+<p><img alt="" src="_images/members_dist2.png" /></p>
 </section>
 <section id="packs-data">
 <h2>1.2 Packs Data<a class="headerlink" href="#packs-data" title="Permalink to this headline">#</a></h2>
@@ -568,12 +561,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">packs_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -660,26 +648,63 @@ title="Print to PDF"
 <span class="n">packs_df_temp_2</span> <span class="o">=</span> <span class="n">packs_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;piece_count_2&#39;</span><span class="p">,</span> <span class="s1">&#39;difficulty_rating_2&#39;</span><span class="p">])</span>
 <span class="n">packs_df_temp_1</span><span class="o">.</span><span class="n">piece_count_1</span> <span class="o">=</span> <span class="n">packs_df_temp_1</span><span class="o">.</span><span class="n">piece_count_1</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
 <span class="n">packs_df_temp_2</span><span class="o">.</span><span class="n">piece_count_2</span> <span class="o">=</span> <span class="n">packs_df_temp_2</span><span class="o">.</span><span class="n">piece_count_2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
-<span class="n">packs_df</span><span class="o">.</span><span class="n">difficulty_rating</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;A-Easy,A-Easy&#39;, &#39;Average,Average&#39;, &#39;Really-Hard,A-Easy&#39;,
-       &#39;Average,A-Easy&#39;, &#39;Hard,A-Easy&#39;, &#39;Hard,Average&#39;,
-       &#39;Really-Hard,Average&#39;, &#39;Average,Really-Hard&#39;, &#39;Average,Hard&#39;,
-       &#39;A-Easy,Average&#39;, &#39;Hard,Hard&#39;, nan, &#39;A-Easy,Hard&#39;,
-       &#39;Really-Hard,Really-Hard&#39;, &#39;A-Easy,Really-Hard&#39;,
-       &#39;Hard,Really-Hard&#39;, &#39;Really-Hard,Hard&#39;], dtype=object)
-</pre></div>
+<div class="output text_html"><style type="text/css">
+#T_2c2be_row0_col0 {
+  background-color: #ffb14e;
+  color: #000000;
+}
+#T_2c2be_row1_col0 {
+  background-color: #ff9867;
+  color: #000000;
+}
+#T_2c2be_row2_col0 {
+  background-color: #ff7f80;
+  color: #f1f1f1;
+}
+#T_2c2be_row3_col0 {
+  background-color: #ff4db2;
+  color: #f1f1f1;
+}
+</style>
+<table id="T_2c2be_">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th class="col_heading level0 col0" >Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_2c2be_level0_row0" class="row_heading level0 row0" >Really-Hard</th>
+      <td id="T_2c2be_row0_col0" class="data row0 col0" >79</td>
+    </tr>
+    <tr>
+      <th id="T_2c2be_level0_row1" class="row_heading level0 row1" >Hard</th>
+      <td id="T_2c2be_row1_col0" class="data row1 col0" >329</td>
+    </tr>
+    <tr>
+      <th id="T_2c2be_level0_row2" class="row_heading level0 row2" >A-Easy</th>
+      <td id="T_2c2be_row2_col0" class="data row2 col0" >493</td>
+    </tr>
+    <tr>
+      <th id="T_2c2be_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_2c2be_row3_col0" class="data row3 col0" >931</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
-</div>
-</div>
-<div class="cell tag_hide_code tag_hide_input docutils container">
+<div class="cell tag_hide_code tag_hide_input tag_remove_output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># checking category-wise distribution of piece_count</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">color_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A-Easy&#39;</span><span class="p">:</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s1">&#39;Average&#39;</span><span class="p">:</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s1">&#39;Hard&#39;</span><span class="p">:</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s1">&#39;Really-Hard&#39;</span><span class="p">:</span> <span class="s2">&quot;m&quot;</span><span class="p">}</span>
+<span class="n">color_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A-Easy&#39;</span><span class="p">:</span><span class="s2">&quot;#ff7f80&quot;</span><span class="p">,</span> <span class="s1">&#39;Average&#39;</span><span class="p">:</span><span class="s2">&quot;#e83e8c&quot;</span><span class="p">,</span> <span class="s1">&#39;Hard&#39;</span><span class="p">:</span><span class="s2">&quot;#ff9867&quot;</span><span class="p">,</span> <span class="s1">&#39;Really-Hard&#39;</span><span class="p">:</span> <span class="s2">&quot;#ffb14e&quot;</span><span class="p">}</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;piece_count_1&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span> <span class="s1">&#39;difficulty_rating_1&#39;</span><span class="p">,</span> 
@@ -689,19 +714,18 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;piece_count_2&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span> <span class="s1">&#39;difficulty_rating_2&#39;</span><span class="p">,</span> 
             <span class="n">data</span><span class="o">=</span><span class="n">packs_df_temp_2</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="n">color_dict</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A-Easy&#39;</span><span class="p">,</span> <span class="s1">&#39;Average&#39;</span><span class="p">,</span> <span class="s1">&#39;Hard&#39;</span><span class="p">,</span> <span class="s1">&#39;Really-Hard&#39;</span><span class="p">])</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Puzzle two distribution&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
-</pre></div>
 </div>
-<img alt="_images/Notebook1-EDA_16_1.png" src="_images/Notebook1-EDA_16_1.png" />
+<div class="cell tag_remove_input tag_remove_output docutils container">
 </div>
-</div>
+<p><img alt="" src="_images/pieces_category_dist.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">packs_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/packs_df.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
